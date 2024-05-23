@@ -13,7 +13,10 @@ classifiers = [
 	"Framework :: AsyncIO",
 	"Intended Audience :: Developers",
 ]
-include = ["CHANGELOG.md"]
+
+include = [
+    { path = "CHANGELOG.md", format = "sdist" },
+]
 
 [tool.poetry.urls]
 "CI: Azure Pipelines" = "https://dev.azure.com/mjpieters/aiolimiter/_build"
@@ -24,21 +27,21 @@ include = ["CHANGELOG.md"]
 python = "^3.8"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.0"
+pytest = ">=7,<9"
 flake8 = "^5.0.3"
 flake8-bugbear = "^23.1.20"
 pytest-asyncio = ">=0.21,<0.24"
-pytest-cov = "^4.0.0"
+pytest-cov = ">=4,<6"
 tox = ">=3.14.1,<5.0.0"
 pre-commit = ">=2.9.2,<4.0.0"
 doit = ">=0.34,<0.37"
 isort = "^5.2.1"
 toml = "^0.10.0"
-twine = "^4.0.0"
+twine = ">=4,<6"
 towncrier = ">=22.8,<24.0"
 
 [tool.poetry.group.dev.dependencies.black]
-version = "^23.1.0"
+version = "^24.4.2"
 markers = "platform_python_implementation != 'PyPy'"
 
 [tool.poetry.group.dev.dependencies.mypy]
@@ -51,7 +54,7 @@ optional = true
 [tool.poetry.group.docs.dependencies]
 sphinx = ">=4.2.0,<8.0.0"
 aiohttp-theme = "^0.1.6"
-sphinx-autodoc-typehints = "^1.10.3"
+sphinx-autodoc-typehints = ">=1.10.3,<3.0.0"
 sphinxcontrib-spelling = ">=4.3,<8.0"
 toml = "^0.10.0"
 
